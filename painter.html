@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Priya painter</title>
+ </head>
+<body>
+
+<h1>Painter entry Priya</h1>
+
+<form>
+    <label for="hiddenPainter">The hidden painter name</label>
+    <input type ="password" id="hiddenPainter" value=Monet> <br>
+
+    <label for="GuessPainter">Guess the painter</label>
+    <input type ="text" id="GuessPainter"> <br>
+
+    <input type="button" onclick="checkPainter()" value="Get values from form">Check the guess
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+
+let good = 0;
+let oops=0;
+
+function checkPainter (){
+    //console.log("Getting form values")
+    hiddenPainter = document.getElementById("hiddenPainter").value;
+    GuessPainter = document.getElementById("GuessPainter").value;
+    
+    
+   if(hiddenPainter == GuessPainter){
+        good +=1;
+        alert("You got it right");
+        document.getElementById("result").innerHTML=good;
+    } else {
+        oops +=1;
+        alert("Sorry");
+        document.getElementById("result").innerHTML=oops;
+    }
+}
+
+</script>
+   
+
+
+</body>
+</html> 
