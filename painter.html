@@ -4,34 +4,22 @@
     <title>Priya painter</title>
  </head>
 <body>
-
 <h1>Painter entry Priya</h1>
-
 <form>
-    <label for="hiddenPainter">The hidden painter name</label>
-    <input type ="password" id="hiddenPainter" value=Monet> <br>
-
-    <label for="GuessPainter">Guess the painter</label>
-    <input type ="text" id="GuessPainter"> <br>
-
+    <label for="PriyaPainter">The hidden painter name</label>
+    <input type ="password" id="PriyaPainter" value=Monet> <br>
+    <label for="PriyakPainter">Guess the painter</label>
+    <input type ="text" id="PriyakPainter"> <br>
     <input type="button" onclick="checkPainter()" value="Get values from form">Check the guess
 </form>
-
 <p id="result">This text will be replaced </p>
-
 <script> 
-
-
 let good = 0;
 let oops=0;
-
 function checkPainter (){
-    //console.log("Getting form values")
-    hiddenPainter = document.getElementById("hiddenPainter").value;
-    GuessPainter = document.getElementById("GuessPainter").value;
-    
-    
-   if(hiddenPainter == GuessPainter){
+    PriyaPainter = document.getElementById("PriyaPainter").value;
+    PriyakPainter = document.getElementById("PriyakPainter").value;
+    if(PriyaPainter == PriyakPainter){
         good +=1;
         alert("You got it right");
         document.getElementById("result").innerHTML=good;
@@ -41,10 +29,6 @@ function checkPainter (){
         document.getElementById("result").innerHTML=oops;
     }
 }
-
 </script>
-
-
-
 </body>
 </html> 
