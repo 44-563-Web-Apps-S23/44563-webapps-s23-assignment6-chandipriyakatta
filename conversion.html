@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+        Learning javascript
+    </title>
+</head>
+ 
+<body>
+
+<h2>Priya shows currency conversion</h2>
+
+    <h2>Getting the input</h2>
+
+    <form>
+        <label for="baseAmount">Enter base amount</label>
+        <input type="number" id="baseAmount" name="baseAmount" value="56"> <br><br>
+
+        <label for="conversationRate">Enter the conversion rate</label>
+        <input type="number" id="conRate" name="conversationRate" value="25"> <br><br>
+
+        <input type="button" onclick="convert()" value="Show conversions">
+    </form>
+    <p id="result">Results will be displayed here</p>
+
+    <form>
+        <input type="radio" id="avg" name="operation" value="mean" onclick="chooseOp()">
+        <label for="avg">average</label></br>
+      
+        <input type="radio" id="max" name="operation" value="maximum" onclick="chooseOp()">
+        <label for="max">max</label></br>
+      
+        <input type="radio" id="min" name="operation" value="minimum" onclick="chooseOp()">
+        <label for="min">min</label></br>
+    </form>
+    <p id="result2">Results will be displayed here</p>
+
+    <script>
+
+        function convert() {
+            console.log("h");
+            let toShow = ""
+            let baseValue = document.getElementById("baseAmount").value
+            let conValue = document.getElementById("conRate").value
+
+            for (var j = 0; j < 5; j++) {
+                let convertedAmount = baseValue * (2 ** j) * conValue
+                toShow += baseValue * (2 ** j) + " is " + convertedAmount + ";"
+            }
+            document.getElementById("result").innerHTML = "Conversions rate are: " + toShow
+        }
+
+        function chooseOp(){
+            console.log("hh");
+            let baseValue = document.getElementById("baseAmount").value
+            let conValue = document.getElementById("conRate").value
+
+            if(document.getElementById("avg").checked){
+                let avg = (parseInt(baseValue)+parseInt(conValue))/2
+                document.getElementById("result2").innerHTML = "avg of "+ baseValue + " and " + conValue + " is " + avg
+            }
+            else if(document.getElementById("max").checked){
+                let max = Math.max(baseValue, conValue)
+                document.getElementById("result2").innerHTML = "max of "+ baseValue + " and " + conValue + " is " + max
+            }
+            else if(document.getElementById("min").checked){
+                let min = Math.min(baseValue, conValue)
+                document.getElementById("result2").innerHTML = "min of "+ baseValue + " and " + conValue + " is " + min
+            }
+            
+        }
+    </script>
+
+    
+</body>
+
+</html>
